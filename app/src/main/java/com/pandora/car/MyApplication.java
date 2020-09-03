@@ -3,9 +3,8 @@ package com.pandora.car;
 import android.app.Application;
 import android.content.Context;
 
-/**
- * Created by AIJACK on 2020/4/5.
- */
+import com.pandora.car.greendao.GreenDaoManager;
+
 
 public class MyApplication extends Application {
 
@@ -15,6 +14,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mContext = this;
+        GreenDaoManager.getInstance().initGreenDao(this);
     }
 
     public static Context getContext() {
